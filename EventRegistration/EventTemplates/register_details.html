@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table border="1px">
+            <tr>
+                <td>S.N</td>
+                <td>Title</td>
+                <td>Description</td>
+                <td>No of Participants</td>
+                <td>Start Date</td>
+                <td>End Date</td>
+                <td>Remarks</td>
+            </tr>
+
+            {% for item in details %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.totalparticipants}}</td>
+                <td>{{item.startdate}}</td>
+                <td>{{item.enddate}} </td>
+                <td><a href="http://127.0.0.1:8000/register/update/{{forloop.counter}}">Update</a> |
+                    <a href="http://127.0.0.1:8000/register/delete/{{forloop.counter}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <button><a href="{% url 'register'  %}">Add User</a></button>
+    </form>
+</body>
+
+</html>

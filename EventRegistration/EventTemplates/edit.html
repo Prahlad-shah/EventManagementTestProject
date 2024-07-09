@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="">Title</label>
+        <input type="text" value="{{data.title}}" name="title"><br>
+        <label for="">Description</label>
+        <input type="text" value="{{data.description}}" name="description"><br>
+        <label for="">totalparticipants</label>
+        <input type="number" value="{{data.totalparticipants}}" name="totalparticipants"><br>
+        <label for="">Start Date</label>
+        <input type="date" value="{{data.startdate}}" name="startdate"><br>
+        <label for="">End Date</label>
+        <input type="date" value="{{data.enddate}}" name="enddate"><br> 
+        <input type="submit" value="Update">
+    </form>
+</body>
+
+</html>

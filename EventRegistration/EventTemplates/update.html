@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table border="1px">
+            <tr>
+                <td>Title</td>
+                <td>Description</td>
+                <td>No of Participants</td>
+                <td>Start Date</td>
+                <td>End Date</td>
+                <td>Remarks</td>
+            </tr>
+            {% for detail in details %}
+            <tr>
+                <td>{{detail.title}}</td>
+                <td>{{detail.description}}</td>
+                <td>{{detail.totalparticipants}}</td>
+                <td>{{detail.startdate}}</td>
+                <td>{{detais.enddate}} </td>
+                <td><input type="submit" value="Update"></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+</body>
+
+</html>
